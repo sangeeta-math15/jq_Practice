@@ -24,8 +24,7 @@ class JqDemo:
         url = "https://api.icndb.com/jokes/random"
         response = urlopen(url)
         data_json = json.loads(response.read())
-        print(data_json)
-        print(jq.compile('.[]|tostring').input(data_json).all())
+        print(jq.compile('keys').input(data_json).all())
 
 
 if __name__ == '__main__':
